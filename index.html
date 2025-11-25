@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PokemonREST — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" width="44" height="44" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#ef5350" />
+        <rect x="2" y="32" width="60" height="30" fill="#fff" />
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-width="3" />
+        <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="3" />
+        <circle cx="32" cy="32" r="5" fill="#000" />
+      </svg>
+      <h1>PokemonREST</h1>
+    </div>
+    <div class="top-actions">
+      <nav class="nav-inline"><a href="about.html" data-i18n="about">About</a></nav>
+      <div class="controls">
+        <div class="lang-toggle">
+          <button class="lang-btn" id="lang-id" data-lang="id">ID</button>
+          <button class="lang-btn" id="lang-en" data-lang="en">EN</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="top-strip" aria-hidden="true">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="profile card">
+        <svg class="logo small" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#ef5350" />
+          <rect x="2" y="32" width="60" height="30" fill="#fff" />
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-width="3" />
+          <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="3" />
+          <circle cx="32" cy="32" r="5" fill="#000" />
+        </svg>
+        <div>
+          <strong>PokemonREST Client</strong>
+        </div>
+      </div>
+
+      <div class="card nav-card">
+        <a href="detail.html" class="nav-item" data-i18n="nav_detail">Detail</a>
+        <a href="about.html" class="nav-item" data-i18n="nav_about">About</a>
+      </div>
+
+      <div class="card stats-quick">
+        <div class="stat">
+          <div id="totalCount" class="value">--</div>
+          <div class="muted" data-i18n="label_total">Total Pokemon</div>
+        </div>
+        <div class="stat">
+          <div id="typeCount" class="value">--</div>
+          <div class="muted" data-i18n="label_types">Types</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <main class="container dashboard">
+      <div class="main-decor" aria-hidden="true">
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+      </div>
+      <section class="dashboard-row">
+        <div class="card hero">
+          <h2>Selamat datang, Trainer!</h2>
+          <p class="muted">Jelajahi koleksi Pokemon atau cari langsung dengan nama atau ID.</p>
+          <div class="search">
+            <input id="q" data-i18n-placeholder="search_placeholder" placeholder="Cari Pokemon (nama atau id)" />
+            <button id="btn-search" data-i18n="search_button">Cari</button>
+          </div>
+        </div>
+
+        <!-- small-cards removed to simplify layout -->
+      </section>
+
+      <section class="content">
+        <h3 class="section-title" data-i18n="list_title">Daftar Pokemon</h3>
+        <section id="list" class="grid"></section>
+
+        <div class="pager">
+          <button id="prev">Prev</button>
+          <span id="pageInfo"></span>
+          <button id="next">Next</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="home.js"></script>
+</body>
+</html>

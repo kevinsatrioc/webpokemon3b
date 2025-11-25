@@ -1,0 +1,148 @@
+/* css/style.css */
+:root{--bg:#f3f6fb;--card:#fff;--muted:#6b7280;--accent:#ef5350;--accent2:#60a5fa;--text:#0b1220}
+*{box-sizing:border-box}
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;color:var(--text);transition:background .28s,color .28s}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:linear-gradient(90deg,#ffffffcc,#f7fbff);box-shadow:0 2px 6px rgba(16,24,40,0.04)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.logo.small{width:40px;height:40px}
+.app{display:flex;gap:18px;max-width:1200px;margin:18px auto;padding:0 18px;align-items:flex-start;width:100%;box-sizing:border-box}
+.sidebar{flex:0 0 240px;min-width:220px}
+.sidebar .card{margin-bottom:12px}
+.sidebar .nav-item{display:block;padding:10px;border-radius:8px;color:inherit;text-decoration:none}
+.sidebar .nav-item:hover{background:#f3f6fb}
+.nav-inline a{margin-left:12px;text-decoration:none;color:var(--muted)}
+.theme-toggle{margin-left:12px;background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;cursor:pointer;font-size:16px}
+.theme-toggle:hover{transform:translateY(-1px)}
+.controls{display:flex;align-items:center;gap:8px}
+.lang-toggle{display:flex;gap:6px}
+.lang-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:6px;cursor:pointer;font-weight:600}
+.lang-btn.active{background:var(--accent);color:#fff;border-color:transparent}
+.lang-btn:focus{outline:none}
+.container{max-width:920px;margin:0;padding:18px 0}
+.container.dashboard{flex:1;max-width:none;padding-left:0;padding-right:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:12px}
+.card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.card .title{font-weight:700;text-transform:capitalize}
+.card .thumb{width:72px;height:72px;display:block;margin:0 auto 8px;object-fit:contain}
+.muted{color:var(--muted)}
+.pager{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px}
+.pager button{padding:8px 12px;border-radius:8px;border:1px solid #e5e7eb;background:white;cursor:pointer}
+.search{display:flex;gap:8px;justify-content:center;margin-bottom:10px}
+.search input{padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;width:260px}
+.card .big{width:140px;height:140px;object-fit:contain}
+.back{display:inline-block;margin-bottom:12px;color:var(--muted);text-decoration:none}
+@media(max-width:560px){.logo{width:38px;height:38px}.container{padding:12px}}
+
+/* Dashboard-specific */
+.dashboard-row{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+.hero{flex:1;padding:20px}
+/* small-cards rules removed */
+.section-title{margin:6px 0 10px;font-size:18px}
+.stats-quick{display:flex;gap:12px;justify-content:space-between}
+.stats-quick .stat{flex:1;text-align:center}
+.stats-quick .value{font-weight:700;font-size:18px}
+
+@media(max-width:900px){.app{flex-direction:column}.sidebar{width:100%;flex:initial}.dashboard-row{flex-direction:column}}
+
+/* Top strip decorative particles under the header */
+.top-strip{position:absolute;top:0;left:0;right:0;height:84px;margin:0;overflow:hidden}
+.top-strip .particle{position:absolute;border-radius:999px;filter:blur(8px);opacity:.12;transform:translateZ(0)}
+.top-strip .p1{width:160px;height:160px;background:linear-gradient(135deg,var(--accent),var(--accent2));left:6%;top:4%;animation:drift1 9s ease-in-out infinite}
+.top-strip .p2{width:100px;height:100px;background:linear-gradient(135deg,#ffd54f,#ff8a65);left:22%;top:16%;animation:drift2 11s ease-in-out infinite}
+.top-strip .p3{width:120px;height:120px;background:linear-gradient(135deg,#8bc34a,#00bcd4);left:38%;top:6%;animation:drift1 8s ease-in-out infinite}
+.top-strip .p4{width:80px;height:80px;background:linear-gradient(135deg,#a78bfa,#60a5fa);left:56%;top:20%;animation:drift3 10s ease-in-out infinite}
+.top-strip .p5{width:140px;height:140px;background:linear-gradient(135deg,#ef9a9a,#ef5350);left:72%;top:2%;animation:drift2 12s ease-in-out infinite}
+.top-strip .p6{width:60px;height:60px;background:linear-gradient(135deg,#4dd0e1,#7c4dff);left:84%;top:26%;animation:drift1 9s ease-in-out infinite}
+.top-strip .p7{width:40px;height:40px;background:linear-gradient(135deg,#ffd54f,#ff8a65);left:46%;top:40%;animation:drift3 7s ease-in-out infinite}
+.top-strip .p8{width:90px;height:90px;background:linear-gradient(135deg,#60a5fa,#8bc34a);left:12%;top:40%;animation:drift2 13s ease-in-out infinite}
+
+@keyframes drift1{0%{transform:translateY(0) translateX(0) scale(1)}50%{transform:translateY(-12px) translateX(6px) scale(1.03)}100%{transform:translateY(0) translateX(0) scale(1)}}
+@keyframes drift2{0%{transform:translateY(0) translateX(0) scale(1)}50%{transform:translateY(-18px) translateX(-8px) scale(1.02)}100%{transform:translateY(0) translateX(0) scale(1)}}
+@keyframes drift3{0%{transform:translateY(0) translateX(0) scale(1)}50%{transform:translateY(-8px) translateX(10px) scale(1.01)}100%{transform:translateY(0) translateX(0) scale(1)}}
+
+/* Make sure top-strip sits under the header but above page background */
+.top-strip{z-index:0}
+.top-strip .particle{z-index:0}
+
+/* keep header above the decorative strip */
+.topbar{position:relative;z-index:3}
+.top-strip, .top-strip .particle{pointer-events:none}
+
+@media(max-width:720px){.top-strip{display:none}}
+
+/* Divider between sidebar and main */
+.divider{width:1px;background:linear-gradient(180deg,rgba(16,24,40,0.06),rgba(16,24,40,0.02));margin:0 8px;border-radius:1px;align-self:stretch}
+.app{gap:12px}
+.divider{box-shadow:0 0 0 1px rgba(255,255,255,0.02) inset}
+
+/* Decorative bubbles in main area to avoid empty space */
+.main-decor{position:absolute;right:48px;top:120px;pointer-events:none;z-index:0}
+.main-decor .bubble{position:absolute;border-radius:999px;filter:blur(10px);opacity:0.12;transform:translateZ(0)}
+.main-decor .b1{width:220px;height:220px;background:linear-gradient(135deg,var(--accent),var(--accent2));right:0;top:0;animation:floatSlow 8s ease-in-out infinite}
+.main-decor .b2{width:120px;height:120px;background:linear-gradient(135deg,#ffd54f,#ff8a65);right:80px;top:60px;opacity:0.1;animation:floatSlow 10s ease-in-out infinite}
+.main-decor .b3{width:80px;height:80px;background:linear-gradient(135deg,#8bc34a,#00bcd4);right:20px;top:180px;opacity:0.08;animation:floatSlow 7s ease-in-out infinite}
+
+@keyframes floatSlow{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+
+/* ensure content sits above decor */
+.container.dashboard{position:relative;z-index:1}
+
+@media(max-width:900px){
+	.divider{display:none}
+	.main-decor{display:none}
+}
+
+/* Visual polish: colors, transitions & animations */
+:root{--accent2:#60a5fa;--glass:rgba(255,255,255,0.6)}
+body{background:linear-gradient(180deg,#f7fbff 0%, #f3f6fb 60%)}
+
+.topbar{backdrop-filter: blur(4px)}
+.search button, .pager button{background:linear-gradient(90deg,var(--accent),var(--accent2));border:0;color:white}
+.search button:hover{filter:brightness(.98);transform:translateY(-1px)}
+.search input:focus{outline:none;box-shadow:0 6px 18px rgba(96,165,250,0.14);border-color:var(--accent2)}
+
+.card{transition:transform .26s cubic-bezier(.2,.9,.2,1),box-shadow .26s,opacity .28s;will-change:transform,opacity}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(16,24,40,0.12)}
+.card .thumb{transition:transform .28s ease,opacity .28s}
+.card:hover .thumb{transform:scale(1.03)}
+
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .5s cubic-bezier(.2,.9,.2,1) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.hero{background:linear-gradient(90deg, rgba(255,241,241,0.6), rgba(243,247,255,0.6));border:1px solid rgba(240,240,255,0.6)}
+.hero h2{margin:0 0 6px}
+
+.section-title{display:flex;align-items:center;gap:12px}
+.section-title::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+.muted{color:var(--muted)}
+
+/* subtle floating for hero */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.hero{animation:floaty 6s ease-in-out infinite}
+
+/* pager & nav polish */
+.pager button{padding:8px 14px;border-radius:10px}
+.nav-card .nav-item{border-left:3px solid transparent;padding-left:12px}
+.nav-card .nav-item:hover{border-left-color:var(--accent2);background:linear-gradient(90deg,#fff,#fbfdff)}
+
+/* responsive tweaks */
+@media(max-width:720px){.search input{width:60%}.hero{padding:16px}}
+
+/* Dark theme overrides */
+:root[data-theme='dark'], [data-theme='dark']{
+	--bg: linear-gradient(180deg,#071226 0%, #06182a 60%);
+	--card: #0f1724;
+	--muted: #9aa9bf;
+	--accent: #ef9a9a;
+	--accent2: #60a5fa;
+	--text: #e6eef8;
+}
+
+/* Ensure elements use variables where needed */
+.card{background:var(--card)}
+body{background:var(--bg)}
+.muted{color:var(--muted)}
+.topbar{background:transparent}
+.theme-toggle{border-color:rgba(255,255,255,0.06);color:var(--text)}
