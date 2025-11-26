@@ -1,15 +1,16 @@
 /* css/style.css */
 :root{--bg:#f3f6fb;--card:#fff;--muted:#6b7280;--accent:#ef5350;--accent2:#60a5fa;--text:#0b1220}
 *{box-sizing:border-box}
-body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;color:var(--text);transition:background .28s,color .28s}
+body{font-family:'Poppins', Inter, Arial, Helvetica, sans-serif;background:var(--bg);margin:0;color:var(--text);transition:background .28s,color .28s}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:linear-gradient(90deg,#ffffffcc,#f7fbff);box-shadow:0 2px 6px rgba(16,24,40,0.04)}
 .brand{display:flex;align-items:center;gap:12px}
+.brand h1{font-weight:600;letter-spacing:-0.2px}
 .logo{width:44px;height:44px;border-radius:10px;object-fit:cover}
 .logo.small{width:40px;height:40px}
 .app{display:flex;gap:18px;max-width:1200px;margin:18px auto;padding:0 18px;align-items:flex-start;width:100%;box-sizing:border-box}
-.sidebar{flex:0 0 240px;min-width:220px}
+.sidebar{flex:0 0 240px;min-width:220px;position:relative;z-index:2}
 .sidebar .card{margin-bottom:12px}
-.sidebar .nav-item{display:block;padding:10px;border-radius:8px;color:inherit;text-decoration:none}
+.sidebar .nav-item{display:block;padding:12px 14px;border-radius:8px;color:inherit;text-decoration:none;font-size:16px;font-weight:500;line-height:1.6}
 .sidebar .nav-item:hover{background:#f3f6fb}
 .nav-inline a{margin-left:12px;text-decoration:none;color:var(--muted)}
 .theme-toggle{margin-left:12px;background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;cursor:pointer;font-size:16px}
@@ -23,7 +24,7 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;
 .container.dashboard{flex:1;max-width:none;padding-left:0;padding-right:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:12px}
 .card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
-.card .title{font-weight:700;text-transform:capitalize}
+.card .title{font-weight:600;text-transform:capitalize;font-size:15px}
 .card .thumb{width:72px;height:72px;display:block;margin:0 auto 8px;object-fit:contain}
 .muted{color:var(--muted)}
 .pager{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px}
@@ -38,7 +39,7 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;
 .dashboard-row{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
 .hero{flex:1;padding:20px}
 /* small-cards rules removed */
-.section-title{margin:6px 0 10px;font-size:18px}
+.section-title{margin:6px 0 10px;font-size:18px;font-weight:600}
 .stats-quick{display:flex;gap:12px;justify-content:space-between}
 .stats-quick .stat{flex:1;text-align:center}
 .stats-quick .value{font-weight:700;font-size:18px}
@@ -118,12 +119,19 @@ body{background:linear-gradient(180deg,#f7fbff 0%, #f3f6fb 60%)}
 
 .muted{color:var(--muted)}
 
+/* headings */
+h1,h2,h3,h4{font-family:'Poppins', Inter, Arial, sans-serif;margin:0}
+h1{font-weight:700}
+h2{font-weight:600}
+h3{font-weight:600}
+
 /* subtle floating for hero */
 @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 .hero{animation:floaty 6s ease-in-out infinite}
 
 /* pager & nav polish */
 .pager button{padding:8px 14px;border-radius:10px}
+.nav-card{display:flex;flex-direction:column;gap:6px}
 .nav-card .nav-item{border-left:3px solid transparent;padding-left:12px}
 .nav-card .nav-item:hover{border-left-color:var(--accent2);background:linear-gradient(90deg,#fff,#fbfdff)}
 

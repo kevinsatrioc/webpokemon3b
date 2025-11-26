@@ -41,6 +41,7 @@ const I18N = {
     list_title: 'Pokemon List',
     nav_dashboard: 'Dashboard',
     nav_list: 'Pokemon List',
+    nav_home: 'Home',
     nav_detail: 'Detail',
     nav_about: 'About',
     prev: 'Prev',
@@ -63,6 +64,7 @@ const I18N = {
     list_title: 'Daftar Pokemon',
     nav_dashboard: 'Dashboard',
     nav_list: 'Daftar Pokemon',
+    nav_home: 'Beranda',
     nav_detail: 'Detail',
     nav_about: 'Tentang',
     prev: 'Sebelumnya',
@@ -81,7 +83,7 @@ function applyLang(lang){
   // set text for elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    const txt = (I18N[lang] && I18N[lang][key]) || '';
+    const txt = (I18N[lang] && I18N[lang][key]) ?? (I18N['en'] && I18N['en'][key]) ?? key;
     el.textContent = txt;
   });
   // placeholders
