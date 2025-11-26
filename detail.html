@@ -4,21 +4,83 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PokeREST — Detail</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/detail.css">
 </head>
-<body>
+<body class="detail-bg">
   <header class="topbar">
     <div class="brand">
-      <img src="/mnt/data/804b94d2-940c-47e2-8bdb-d57ab5bc9acb.png" alt="logo" class="logo">
-      <h1>PokeREST Client</h1>
+      <svg class="logo" width="44" height="44" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#ef5350" />
+        <rect x="2" y="32" width="60" height="30" fill="#fff" />
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-width="3" />
+        <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="3" />
+        <circle cx="32" cy="32" r="5" fill="#000" />
+      </svg>
+      <h1>PokemonREST</h1>
     </div>
-    <nav><a href="index.html">Home</a> | <a href="about.html">About</a></nav>
+    <div class="top-actions">
+      <nav class="nav-inline"><a href="index.html">Beranda</a></nav>
+      <div class="controls">
+        <div class="lang-toggle">
+          <button class="lang-btn" id="lang-id" data-lang="id">ID</button>
+          <button class="lang-btn" id="lang-en" data-lang="en">EN</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
-    <a id="back" href="index.html" class="back">← Kembali</a>
-    <section id="detail" class="card"></section>
-  </main>
+  <div class="top-strip" aria-hidden="true">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="profile card">
+        <svg class="logo small" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#ef5350" />
+          <rect x="2" y="32" width="60" height="30" fill="#fff" />
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-width="3" />
+          <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="3" />
+          <circle cx="32" cy="32" r="5" fill="#000" />
+        </svg>
+        <div>
+          <strong>PokemonREST Client</strong>
+        </div>
+      </div>
+
+      <div class="card nav-card">
+        <a href="detail.html" class="nav-item">Detail</a>
+        <a href="about.html" class="nav-item">Tentang</a>
+      </div>
+
+      <div class="card stats-quick">
+        <div class="stat">
+          <div id="totalCount" class="value">--</div>
+          <div class="muted">Total Pokemon</div>
+        </div>
+        <div class="stat">
+          <div id="typeCount" class="value">--</div>
+          <div class="muted">Tipe</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <main class="container dashboard">
+      <a id="back" href="index.html" class="back">← Kembali</a>
+      <section id="detail" class="card"></section>
+    </main>
+  </div>
 
   <script type="module" src="js/detail.js"></script>
 </body>

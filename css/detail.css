@@ -1,0 +1,62 @@
+/* detail.css - tambahan styling khusus halaman detail */
+.detail-bg {
+  min-height:100vh;
+  color:#eaf6ff;
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(41,128,185,0.06), transparent 10%),
+    radial-gradient(700px 360px at 90% 80%, rgba(255,140,71,0.04), transparent 8%),
+    linear-gradient(180deg,#071229 0%, #021827 60%);
+  background-attachment: fixed;
+}
+
+.detail-header { text-align:center; margin-bottom:8px; }
+.pokemon-title { margin:0; font-weight:700; font-size:26px; color:#fff; }
+.pokemon-title small { color:#cfefff; font-weight:600; margin-left:8px; }
+
+.detail-grid { display:grid; grid-template-columns:360px 1fr; gap:22px; align-items:start; }
+.detail-left .image-wrap { background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); padding:18px; border-radius:8px; display:flex; align-items:center; justify-content:center; }
+.sprite { width:100%; max-width:320px; }
+
+/* Override card backgrounds to match home (dark/semi-transparent) */
+.detail-bg .card{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 28px rgba(2,6,23,0.6);
+  color: #e6eef8;
+}
+.detail-bg .card h4, .detail-bg .card h3 { color: #dff6ff; }
+.detail-bg .description { color: rgba(230,238,248,0.9); }
+
+.info-box { background:rgba(255,255,255,0.03); padding:14px; border-radius:8px; color:#e9fbff; margin:12px 0; }
+.info-box dl { display:grid; grid-template-columns:120px 1fr; gap:6px 10px; }
+.info-box dt { opacity:0.8; font-size:13px; }
+.info-box dd { margin:0; font-weight:600; }
+
+.type { padding:8px 12px; border-radius:14px; margin:6px 8px 6px 0; display:inline-block; color:#fff; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.2) inset; background:rgba(255,255,255,0.04); }
+.type.small{ padding:6px 8px; border-radius:12px; font-size:12px; }
+.type.fire{ background:linear-gradient(90deg,#ff8a65,#ff7043); }
+.type.water{ background:linear-gradient(90deg,#29b6f6,#0288d1); }
+.type.grass{ background:linear-gradient(90deg,#66bb6a,#2e7d32); }
+
+.weaknesses .weakness{ background:#f6c34a; padding:8px 12px; border-radius:10px; margin-right:8px; font-weight:700; }
+
+.stats-card { margin-top:14px; }
+.stat-row{ display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.stat-name{ width:120px; opacity:0.9; }
+.stat-bar{ flex:1; background:rgba(255,255,255,0.05); height:12px; border-radius:8px; overflow:hidden; }
+.stat-bar span{ display:block; height:100%; background:linear-gradient(90deg,#29b6f6,#ff8a65); }
+.stat-val{ width:40px; text-align:right; font-weight:700; }
+
+.evolution { margin-top:18px; padding:16px; }
+.evolution-row { display:flex; align-items:center; gap:12px; justify-content:space-between; }
+.evo-item { text-align:center; width:160px; background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; }
+.evo-img { width:86px; height:86px; margin:0 auto 8px; border-radius:50%; background:linear-gradient(180deg,#ffffff08,#00000008); display:flex; align-items:center; justify-content:center; }
+.evo-img img{ max-width:80px; }
+.evo-name{ font-weight:700; margin-bottom:6px; }
+.evo-arrow { font-size:32px; color:rgba(255,255,255,0.18); }
+
+@media (max-width:900px){
+  .detail-grid{ grid-template-columns:1fr; }
+  .evolution-row{ flex-direction:column; gap:18px; }
+  .evo-arrow{ display:none; }
+}
