@@ -1,25 +1,11 @@
 // js/home.js
 import { listPokemon, getPokemon, listTypes } from "./api.js";
+import { initTheme } from './theme.js';
 
-// Theme: apply saved theme or system preference
-function applyTheme(theme){
-  document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
-  const btn = document.getElementById('theme-toggle');
-  if(btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
-  try{ localStorage.setItem('theme', theme); }catch(e){}
-}
-
-const savedTheme = (function(){
-  try{ return localStorage.getItem('theme'); }catch(e){return null}
-})();
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+// initialize shared theme behavior
+initTheme();
 
 document.addEventListener('click', (e)=>{
-  if(e.target && e.target.id === 'theme-toggle'){
-    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  }
   // language buttons
   if(e.target && e.target.classList && e.target.classList.contains('lang-btn')){
     const lang = e.target.dataset.lang;

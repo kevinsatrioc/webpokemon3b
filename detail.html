@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>PokeREST — Detail</title>
+  <title>PokemonREST</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/detail.css">
 </head>
@@ -17,10 +17,10 @@
         <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="3" />
         <circle cx="32" cy="32" r="5" fill="#000" />
       </svg>
-      <h1>PokemonREST</h1>
+      <h1 data-i18n="nav_home">PokemonREST</h1>
     </div>
     <div class="top-actions">
-      <nav class="nav-inline"><a href="index.html">Beranda</a></nav>
+      <nav data-i18n="nav_language">Bahasa</a></nav>
       <div class="controls">
         <div class="lang-toggle">
           <button class="lang-btn" id="lang-id" data-lang="id">ID</button>
@@ -44,7 +44,7 @@
 
   <div class="app">
     <aside class="sidebar">
-      <div class="profile card">
+      <a href="index.html" class="profile card profile-link" title="Kembali ke beranda">
         <svg class="logo small" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="32" cy="32" r="30" fill="#ef5350" />
           <rect x="2" y="32" width="60" height="30" fill="#fff" />
@@ -55,21 +55,20 @@
         <div>
           <strong>PokemonREST Client</strong>
         </div>
-      </div>
+      </a>
 
       <div class="card nav-card">
-        <a href="detail.html" class="nav-item">Detail</a>
-        <a href="about.html" class="nav-item">Tentang</a>
+        <a href="about.html" class="nav-item" data-i18n="nav_about">Tentang</a>
       </div>
 
       <div class="card stats-quick">
         <div class="stat">
           <div id="totalCount" class="value">--</div>
-          <div class="muted">Total Pokemon</div>
+          <div class="muted" data-i18n="label_total">Total Pokemon</div>
         </div>
         <div class="stat">
           <div id="typeCount" class="value">--</div>
-          <div class="muted">Tipe</div>
+          <div class="muted" data-i18n="label_types">Tipe</div>
         </div>
       </div>
     </aside>
@@ -77,11 +76,11 @@
     <div class="divider" aria-hidden="true"></div>
 
     <main class="container dashboard">
-      <a id="back" href="index.html" class="back">← Kembali</a>
-      <section id="detail" class="card"></section>
+    <section id="detail" class="card"></section>
     </main>
   </div>
 
+  <script type="module" src="js/i18n.js"></script>
   <script type="module" src="js/detail.js"></script>
 </body>
 </html>
